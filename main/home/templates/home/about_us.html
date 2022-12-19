@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>курсы</title>
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="top">
+        <div class="navbar">
+
+            <div class="container">
+                <ul class="menu_left">
+                    <li><a href="{% url 'home' %}">main</a></li>
+                    <li><a href="{% url 'courses' %}">courses</a></li>
+
+
+            </ul>
+            <img src="{% static 'home/img/logo.png' %}" alt="LOGO" class="logo">
+            <ul class="menu_right">
+                <li><a href="{% url 'about_us' %}">about us</a></li>
+
+                <li><a href="{% url 'voc' %}">Vocation</a></li>
+            </ul>
+            </div>
+        </div>
+        
+       
+        
+    </div>
+    <div class="general">
+        <div  class="titlle">
+            <h2 data-aos="zoom-out-down">Our    team</h2>
+            <div data-aos="zoom-in" class="line-box">
+                <div class="line"></div>
+            </div>
+            <p data-aos="zoom-out-up">You get the highest class service from first-class experts in your field</p>
+        </div>
+        <div class="butn">
+            <img class="slider-prev" src="{% static 'home/img/left.svg' %}" alt="">
+        
+        
+            <img class="slider-next" src="{% static 'home/img/right.svg' %}" alt="">
+        </div>
+            
+        
+        <div class="conta">
+            <div class="slider">
+                <ul class="bl slider-line">
+                    <li class="sl">
+                        <img src="{% static 'home/img/ayana.jpg' %}" alt="">
+                        <div class="in">
+                            <p data-aos="zoom-in-right" class="name">Baizakova Ayana</p>
+                            <p data-aos="zoom-in-right" class="work">CEO</p>
+                            <div class="mini_line-box">
+                                <div class="mini_line"></div>
+                            </div>
+                            
+                            <p data-aos="zoom-in-right" class="about">She has been working for the company since its foundation and participates in the development of several projects. An expert in his field. Annually attends international conferences.</p>
+                        </div>
+                        
+                    </li>
+                    <li class="sl">
+                        <img src="{% static 'home/img/jaminka.jpg' %}" alt="">
+                        <div class="in">
+                            <p class="name">Урматов Жамин</p>
+                            <p class="work">CEO</p>
+                            <div class="mini_line-box">
+                                <div class="mini_line"></div>
+                            </div>
+                            
+                            <p class="about">He has been working for the company since its foundation and participates in the development of several projects. An expert in his field. Annually attends international conferences.</p>
+                        </div>
+                    </li>
+                    <li class="sl">
+                        <img src="{% static 'home/img/argen.jpg' %}" alt="">
+                        <div class="in">
+                            <p class="name">Шадыбеков Арген</p>
+                            <p class="work">CEO</p>
+                            <div class="mini_line-box">
+                                <div class="mini_line"></div>
+                            </div>
+                            
+                            <p class="about">He has been working for the company since its foundation and participates in the development of several projects. An expert in his field. Annually attends international conferences.</p>
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+           
+           
+            
+        
+        </div>
+    </div>
+    <footer>
+        <div class="top_1">
+            <img src="{% static 'home/img/logo.png' %}" alt="">
+            <ul>
+                <a href="{% url 'home' %}"><li>HOME</li></a>
+                <a href="https://t.me/Zhazgen"><li>CEO</li></a>
+                <a href="https://t.me/ayanaais"><li>DESIGNER</li></a>
+                <a href="https://t.me/+996701550669"><li>WRITER</li></a>
+
+                
+            </ul>
+            <div class="footer-icon">
+                <a class="punsch" href="https://t.me/Zhazgen">
+                    <img class="icon" src="{% static 'home/img/telegram.png' %}" alt="">
+                </a>
+
+
+                <a class="punsch" href="https://wa.me/+996501240204">
+                    <img class="icon" src="{% static 'home/img/whatsapp.png' %}" alt="">
+                </a>
+                
+            </div>
+        </div>
+        <div class="bottom_1">
+            <h2>©Copyright. All rights reserved</h2>
+        </div>
+    </footer>
+    <script src="{% static 'home/js/script.js' %}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>

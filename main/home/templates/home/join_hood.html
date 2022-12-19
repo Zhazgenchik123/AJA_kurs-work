@@ -1,0 +1,102 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'home/css/language_detail.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="top">
+        <div class="navbar">
+
+            <div class="container">
+                <ul class="menu_left">
+                    <li><a href="{% url 'home' %}">main</a></li>
+                    <li><a href="{% url 'courses' %}">courses</a></li>
+
+
+            </ul>
+            <img src="{% static 'home/img/logo.png' %}" alt="LOGO" class="logo">
+            <ul class="menu_right">
+                <li><a href="{% url 'about_us' %}">about us</a></li>
+
+                <li><a href="{% url 'voc' %}">Vocation</a></li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    <div class="language_image">
+        <img src="{{lang.image.url}}" alt="dasdsads">
+        <div class="text">
+            <h1>{{ lang.title }}</h1>
+        <p>{{ lang.full_text_2 }}</p>
+        </div>
+
+    </div>
+    <div class="benefits">
+        <h2>Advantages {{lang.title}} :</h2>
+        <ul class="plus">
+            <li class="number_">1#</li>
+            <li class="left-line">{{lang.advantage_1}}</li>
+        </ul>
+        <ul class="plus">
+            <li class="number_">2#</li>
+            <li class="left-line">{{lang.advantage_2}}</li>
+        </ul>
+        <ul class="plus">
+            <li class="number_">3#</li>
+            <li class="left-line">{{lang.advantage_3}}.</li>
+        </ul>
+        
+    </div>
+    <div class="benefits">
+        <h2>Disadvantages {{lang.title}} :</h2>
+        <ul class="plus">
+            <li class="number_">1#</li>
+            <li class="left-line">{{lang.disadvantage_1}}</li>
+        </ul>
+        <ul class="plus">
+            <li class="number_">2#</li>
+            <li class="left-line">{{lang.disadvantage_2}}</li>
+        </ul>
+        <ul class="plus">
+            <li class="number_">3#</li>
+            <li class="left-line">{{lang.disadvantage_3}}.</li>
+        </ul>
+    </div>
+    <div class="main_lang">
+        <h2>About {{lang.title}}</h2>
+        <p>{{lang.full_text_1}}
+        </p>
+    </div>
+    <footer data-aos="zoom-in-up">
+        <div class="top_1">
+            <img src="{% static 'home/img/logo.png' %}" alt="">
+            <ul>
+                <a href="{% url 'home' %}"><li>HOME</li></a>
+                <a href="https://t.me/Zhazgenq"><li>CEO</li></a>
+                <a href="https://t.me/ayanaais"><li>DESIGNER</li></a>
+                <a href="https://t.me/+996701550669"><li>WRITER</li></a>
+
+
+            </ul>
+            <div class="footer-icon">
+                <a class="punsch" href="https://t.me/Zhazgen">
+                    <img class="icon" src="{% static 'home/img/telegram.png' %}" alt="">
+                </a>
+
+                <a class="punsch" href="https://wa.me/+996501240204">
+                    <img class="icon" src="{% static 'home/img/whatsapp.png' %}" alt="">
+                </a>
+
+            </div>
+        </div>
+        <div class="bottom_1">
+            <h2>©Copyright. All rights reserved</h2>
+        </div>
+    </footer>
+</body>
+</html>

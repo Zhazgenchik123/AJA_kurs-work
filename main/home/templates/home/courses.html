@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'home/css/third.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top" name="top">
+        <div class="navbar">
+
+            <div class="container">
+                <ul class="menu_left">
+                    <li><a href="{% url 'home' %}">main</a></li>
+                    <li><a href="{% url 'courses' %}">courses</a></li>
+
+
+            </ul>
+            <img src="{% static 'home/img/logo.png' %}" alt="LOGO" class="logo">
+            <ul class="menu_right">
+                <li><a href="{% url 'about_us' %}">about us</a></li>
+
+                <li><a href="{% url 'voc' %}">Vocation</a></li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    <div class="containerr">
+        <ul class="main">
+            {% for el in course %}
+                <li class="card">
+                    <div class="one">
+                        <div class="cont">
+                            <br>
+                            <h2>{{el.title}}</h2>
+                            <p class="description ">{{el.title_text|striptags|truncatechars:150}}</p>
+                        <ul class="inner">
+                            <li class="in">
+                                <img class="icon-img" src="{% static 'home/img/icon_date.svg' %}" alt="">
+                                <div class="content">
+                                    <p class="gr">Launching the course</p>
+                                <p class="start_date px14">{{el.start_time}}</p>
+                                </div>
+
+                            </li>
+                            <li class="in">
+                                <img class="icon-img" src="{% static 'home/img/clock.png' %}" alt="">
+                                <div class="content">
+                                    <p class="gr">Duration</p>
+                                <p class="start_date px14">{{el.duration}}</p>
+                                </div>
+
+                            </li>
+
+                        </ul>
+                        <ul class="inner noch">
+                            <li class="in">
+                                <img class="icon-img" src="{% static 'home/img/money.png' %}" alt="">
+                                <div class="content">
+                                    <p class="gr">Price</p>
+                                <p class="start_date px14">{{el.price}}</p>
+                                </div>
+
+                            </li>
+
+
+                        </ul>
+                        <div class="detail">
+                            <a class="detail_course_href" href="/courses/{{ el.id }}/">Learn more </a>
+                            <div class="image">
+                                <img src="{% static 'home/img/right_1.svg' %}" alt="arrow_detail">
+                            </div>
+
+                        </div>
+
+                        </div>
+
+                    </div>
+                </li>
+            {% endfor %}
+            
+            
+             
+           
+            
+        </ul>
+    </div>
+    <footer data-aos="zoom-in-up">
+        <div class="top_1">
+            <img src="{% static 'home/img/logo.png' %}" alt="">
+            <ul>
+                <a href="{% url 'home' %}"><li>HOME</li></a>
+                <a href="https://t.me/Zhazgen"><li>CEO</li></a>
+                <a href="https://t.me/ayanaais"><li>DESIGNER</li></a>
+                <a href="https://t.me/+996701550669"><li>WRITER</li></a>
+
+                
+            </ul>
+            <div class="footer-icon">
+                <a class="punsch" href="https://t.me/Zhazgen">
+                    <img class="icon" src="{% static 'home/img/telegram.png' %}" alt="">
+                </a>
+
+                <a class="punsch" href="https://wa.me/+996501240204">
+                    <img class="icon" src="{% static 'home/img/whatsapp.png' %}" alt="">
+                </a>
+                
+            </div>
+        </div>
+        <div class="bottom_1">
+            <h2>©Copyright. All rights reserved</h2>
+        </div>
+    </footer>
+</body>
+</html>

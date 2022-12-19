@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home/css/max.css' %}">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+
+            <div class="container">
+                <ul class="menu_left">
+                    <li><a href="{% url 'home' %}">main</a></li>
+                    <li><a href="{% url 'courses' %}">courses</a></li>
+
+
+            </ul>
+            <img src="{% static 'home/img/logo.png' %}" alt="LOGO" class="logo">
+            <ul class="menu_right">
+                <li><a href="{% url 'about_us' %}">about us</a></li>
+
+                <li><a href="{% url 'voc' %}">Vocation</a></li>
+            </ul>
+            </div>
+        </div>
+    <div class="plug"></div>
+    <div class="large">
+        <div class="main_meaning">
+            <h1 class="h1">
+                Rise to heaven with the AJA
+            </h1>
+            <div class="descr">Join the community of leaders — achieve success. Faster!</div>
+            <a class="form_going" href="#form_1" >
+                <button  class='resume'>Send your resume now
+
+                </button>
+            </a>
+        </div>
+    </div>
+    <div class="section">
+        <div class="contic">
+            <h2 class="h2">
+                    AJA: who are we?
+            </h2>
+            <p class="idea"><span>AJA — the best team in programming languages,</span>leader in inai. the team was founded in 2022 and has gone from one person to a whole team of three people</p>
+        </div>
+        <div class="piece">
+            <div class="contain">
+                <h2 class="h2">Take a look at AJA</h2>
+
+            </div>
+            <div class="row_news">
+               <ul>
+                   {% for i in aja %}
+                        <a href="https://www.instagram.com/ng_party_inai/">
+                            <li class="dritte">
+                                <img src="{{i.image.url}}" alt="">{{i.title}}
+                            </li>
+                        </a>
+                   {% endfor %}
+                </ul>
+                
+            </div>
+        </div>
+        <div id="form_1" class="formm">
+            <div class="in">
+                <h2>Send your resume</h2>
+                <p>We are opening new directions, launching projects, so we always have interesting vacancies in various fields: advertising, marketing, sales, software development, etc.</p>
+                <form  method="post">
+                    {% csrf_token %}
+
+                    {{ form.name }}
+                    {{ form.vocation }}
+                    {{ form.t_number }}
+                    {{ form.href }}
+
+                    <span>{{ error }}</span>
+                    <br>
+
+                    <button class="bt" type="submit">
+                        <span>Send a request</span>
+                        <img  class='arrow' src="{% static 'home/img/arrow_right.svg' %}" alt="">
+                    </button>
+
+                </form>
+            </div>
+            
+        </div>
+    </div>
+    <div class="between"></div>
+    <footer>
+        <div class="top_1">
+            <img src="{% static 'home/img/logo.png' %}" alt="">
+            <ul>
+                <a href="{% url 'home' %}"><li>HOME</li></a>
+                <a href="https://t.me/Zhazgen"><li>CEO</li></a>
+                <a href="https://t.me/ayanaais"><li>DESIGNER</li></a>
+                <a href="https://t.me/+996701550669"><li>WRITER</li></a>
+
+                
+            </ul>
+            <div class="footer-icon">
+                <a class="punsch" href="https://t.me/Zhazgen">
+                    <img class="icon" src="{% static 'home/img/telegram.png' %}" alt="">
+                </a>
+
+                <a class="punsch" href="https://wa.me/+996501240204">
+                    <img class="icon" src="{% static 'home/img/whatsapp.png' %}" alt="">
+                </a>
+                
+            </div>
+        </div>
+        <div class="bottom_1">
+            <h2>©Copyright. All rights reserved</h2>
+        </div>
+    </footer>
+
+</body>
+</html>

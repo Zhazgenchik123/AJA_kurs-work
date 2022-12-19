@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'home/css/style_detail.css' %}">
+</head>
+<body>
+    <div class="top">
+        <div class="navbar">
+
+            <div class="container">
+                <ul class="menu_left">
+                    <li><a href="{% url 'home' %}">main</a></li>
+                    <li><a href="{% url 'courses' %}">courses</a></li>
+
+
+            </ul>
+            <img src="{% static 'home/img/logo.png' %}" alt="LOGO" class="logo">
+            <ul class="menu_right">
+                <li><a href="{% url 'about_us' %}">about us</a></li>
+
+                <li><a href="{% url 'voc' %}">Vocation</a></li>
+            </ul>
+            </div>
+        </div>
+    </div>
+     
+    <div class="language_image">
+        <img src="{{ detail.first_image.url }}" alt="dasdsads">
+        <div class="text">
+            <h1>{{ detail.detail_title }}</h1>
+        <p>{{ detail.title_text }}</p>
+        <a href="{{detail.course_href}}"><button class="consultation">Go to course</button></a>
+        </div>
+        
+    </div>
+    <div class="con">
+        <h2 class="itas-section-title conh2">Who will this course suit?</h2>
+        <ul class="cards">
+            <li>
+                <div class="beginner_1 beginner">
+                    <img src="{% static 'home/img/comp.svg'%}" alt="">
+                    <h2>{{ detail.suitable_for_whom_1 }}</h2>
+                    <div>
+                        <p>{{ detail.suitable_for_whom_text_1 }}
+
+                        </p>
+                    </div>
+                    
+                </div>
+            </li>
+            <li>
+                <div class="beginner_1 beginner">
+                
+                    <img src="{% static 'home/img/icon_code.svg'%}" alt="">
+                    <h2>{{ detail.suitable_for_whom_2 }}</h2>
+                    <div>
+                        <p class="par">{{ detail.suitable_for_whom_text_2 }}
+                        </p>
+                    </div>
+                        
+                    
+                </div>
+            </li>
+            <li>
+                <div class="down">
+                    
+                    <img class="icon_1" src="{% static 'home/img/icon_notification.svg' %}" alt="зеленый кружок">
+                    <p>{{ detail.profits }}</p>
+                </div>
+                
+
+            </li>
+        </ul>
+        <div class="abou">
+            <h2>About course</h2>
+            <div class="about">
+                <p>{{detail.about_course}}</p>
+            </div>
+        </div>
+        <div class="gehalt">
+            <div></div>
+            <h2 class="itas-section-title">How much does a {{ detail.detail_title }} earn</h2>
+            <ul class="fl">
+                <li>
+                        <div class="card1">
+                            <div class="card1">
+                                <p class="card1_p1">{{ detail.person_1 }}</p>
+                                <p class="price_1">{{detail.earn_money_1}}</p>
+                                <div class="detail">
+                                    <a class="detail_course_href" href="{{detail.person_href_1}}">Learn more</a>
+                                    <div class="image">
+                                        <img src="{% static 'home/img/right_1.svg'%}">
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </div>
+                </li>
+                <li>
+                    <div class="card1">
+                        <p class="card1_p1">{{ detail.person_2 }}</p>
+                        <p class="price_1">{{detail.earn_money_2}}</p>
+                        <div class="detail">
+                            <a class="detail_course_href" href="{{detail.person_href_2}}">Learn more</a>
+                            <div class="image">
+                                <img src="{% static 'home/img/right_1.svg'%}">
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card1">
+                        <div class="card1">
+                            <p class="card1_p1"> {{ detail.person_3 }}</p>
+                            <p class="price_1">{{detail.earn_money_3}}</p>
+                            <div class="detail">
+                                <a class="detail_course_href" href="{{detail.person_href_3}}">Learn more</a>
+                                <div class="image">
+                                    <img src="{% static 'home/img/right_1.svg'%}">
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="profits">
+            <h2 class="itas-section-title">
+                What does the profession of a {{detail.detail_title}} give
+            </h2>
+            <ul class="ic">
+                <li>
+                    <div class="card_1">
+                        <div class="topic">
+                            <img src="{% static 'home/img/icon_graph.svg'%}" alt="">
+                            <h3>Perspective</h3>
+                        </div>
+                        <p>{{detail.text_1|striptags|truncatechars:180}}</p>
+                        
+                    </div> 
+                </li>
+                <li>
+                    <div class="card_1">
+                        <div class="topic">
+                            <img src="{% static 'home/img/icon_like.svg' %}" alt="">
+                            <h3>Financial independence</h3>
+                        </div>
+                        <p>{{detail.text_2|striptags|truncatechars:180}}</p>
+                    </div> 
+                </li>
+                <li>
+                    <div class="card_1">
+                        <div class="topic">
+                            <img src="{% static 'home/img/icon_sticker.svg' %}" alt="">
+                            <h3>Interesting work</h3>
+                        </div>
+                        <p>{{detail.text_3|striptags|truncatechars:180}}</p>
+                    </div> 
+                </li>
+            </ul>
+        </div>
+            
+    </div>
+    <footer data-aos="zoom-in-up">
+        <div class="top_1">
+            <img src="{% static 'home/img/logo.png' %}" alt="">
+            <ul>
+                <a href="{% url 'home' %}"><li>HOME</li></a>
+                <a href="https://t.me/Zhazgen"><li>CEO</li></a>
+                <a href="https://t.me/ayanaais"><li>DESIGNER</li></a>
+                <a href="https://t.me/+996701550669"><li>WRITER</li></a>
+
+
+            </ul>
+            <div class="footer-icon">
+                <a class="punsch" href="https://t.me/Zhazgen">
+                    <img class="icon" src="{% static 'home/img/telegram.png' %}" alt="">
+                </a>
+
+                <a class="punsch" href="https://wa.me/+996501240204">
+                    <img class="icon" src="{% static 'home/img/whatsapp.png' %}" alt="">
+                </a>
+
+            </div>
+        </div>
+        <div class="bottom_1">
+            <h2>©Copyright. All rights reserved</h2>
+        </div>
+    </footer>
+   
+</body>
+</html>

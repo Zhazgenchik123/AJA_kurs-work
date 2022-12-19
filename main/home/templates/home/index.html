@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>главная</title>
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body id="index">
+    <div class="top" name="top">
+        <div class="navbar">
+
+            <div class="container">
+                <ul class="menu_left">
+                    <li><a href="{% url 'home' %}">main</a></li>
+                    <li><a href="{% url 'courses' %}">courses</a></li>
+
+
+            </ul>
+            <img src="{% static 'home/img/logo.png' %}" alt="LOGO" class="logo">
+            <ul class="menu_right">
+                <li><a href="{% url 'about_us' %}">about us</a></li>
+
+                <li><a href="{% url 'voc' %}">Vocation</a></li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="main">
+            <video autoplay muted loop id="myVideo">
+                <source src="{% static 'home/video/2.mp4' %}" type="video/mp4">
+              </video>
+            <div class="container">
+                
+                <div class="content">
+                    <h1 data-aos="zoom-out">Find your programming language</h1>
+                    <p data-aos="zoom-out">The most difficult thing is not to choose a programming language , but to learn it</p>
+
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="basic">
+        <div data-aos="zoom-in" class="main_content">
+            <h2>Popular programming languages</h2>
+            <p>Сhoose your programming language. he will help you in your future endeavors</p>
+        </div>
+        <div class="list">
+            <ul class="mn">
+                <li>#</li>
+                <li>Programming languages</li>
+                <li>Ease of mastering</li>
+                <li>Number of programmers</li>
+
+            </ul>
+            {% for el in art %}
+                <ul data-aos="fade-left" class="langu">
+                    <a href="/{{ el.id }}/"><li class="li1">{{ el.place }}</li></a>
+                    <li class="li2">{{ el.title }}</li>
+                    <li class="li3">{{ el.dificult }}</li>
+                    <li class="li4">{{ el.quantity }}</li>
+                    <a class="btn-btn" href="/{{ el.id }}/">Learn more</a>
+                </ul>
+            {% endfor %}
+        </div>
+
+    </div>
+    <footer data-aos="zoom-in-up">
+        <div class="top_1">
+            <img src="{% static 'home/img/logo.png' %}" alt="">
+            <ul>
+                <a href="{% url 'home' %}"><li>HOME</li></a>
+                <a href="https://t.me/Zhazgen"><li>CEO</li></a>
+                <a href="https://t.me/ayanaais"><li>DESIGNER</li></a>
+                <a href="https://t.me/+996701550669"><li>WRITER</li></a>
+
+                
+            </ul>
+            <div class="footer-icon">
+                <a class="punsch" href="https://t.me/Zhazgen">
+                    <img class="icon" src="{% static 'home/img/telegram.png' %}" alt="">
+                </a>
+
+
+                <a class="punsch" href="https://wa.me/+996501240204">
+                    <img class="icon" src="{% static 'home/img/whatsapp.png' %}" alt="">
+                </a>
+                
+            </div>
+        </div>
+        <div class="bottom_1">
+            <h2>©Copyright. All rights reserved</h2>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
